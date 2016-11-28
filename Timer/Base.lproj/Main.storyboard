@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,73 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wjh-bh-CG5">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="pause" id="Yci-sf-5oG">
+                                        <connections>
+                                            <action selector="pauseButton:" destination="BYZ-38-t0r" id="Eam-kX-Yij"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="EKi-Ch-0Es"/>
+                                    <barButtonItem title="Reset" id="Dk7-tb-QpS">
+                                        <connections>
+                                            <action selector="reset:" destination="BYZ-38-t0r" id="QbW-2r-XL0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="D8N-k4-oa5"/>
+                                    <barButtonItem systemItem="play" id="UvQ-1x-Nb2">
+                                        <connections>
+                                            <action selector="playButton:" destination="BYZ-38-t0r" id="a8I-BN-orb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Press Play" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9D-g3-aXQ">
+                                <rect key="frame" x="16" y="323" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Trx-qG-Dex">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Egg Timer" id="Gkd-XW-E3H">
+                                        <barButtonItem key="leftBarButtonItem" title="-10" id="Rhj-HC-7Aa">
+                                            <connections>
+                                                <action selector="subTen:" destination="BYZ-38-t0r" id="LF9-wU-oDT"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="+10" id="XYh-yn-AmP">
+                                            <connections>
+                                                <action selector="addTen:" destination="BYZ-38-t0r" id="AiF-ST-PWI"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wjh-bh-CG5" firstAttribute="leading" secondItem="Trx-qG-Dex" secondAttribute="leading" id="F5N-lJ-o3Q"/>
+                            <constraint firstItem="g9D-g3-aXQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GwF-j7-zIc"/>
+                            <constraint firstItem="Trx-qG-Dex" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="IWr-qj-ZrE"/>
+                            <constraint firstItem="g9D-g3-aXQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="UKv-Ju-4po"/>
+                            <constraint firstItem="g9D-g3-aXQ" firstAttribute="centerX" secondItem="Trx-qG-Dex" secondAttribute="centerX" id="VKB-NN-S0t"/>
+                            <constraint firstItem="Wjh-bh-CG5" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="br5-md-Of5"/>
+                            <constraint firstItem="g9D-g3-aXQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lZi-Tq-mRC"/>
+                            <constraint firstItem="Wjh-bh-CG5" firstAttribute="trailing" secondItem="Trx-qG-Dex" secondAttribute="trailing" id="m3J-Z3-Cy9"/>
+                            <constraint firstItem="Wjh-bh-CG5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mQr-Pu-z7E"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="counter" destination="g9D-g3-aXQ" id="KJU-Qn-wYe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="80.799999999999997" y="43.628185907046479"/>
         </scene>
     </scenes>
 </document>
