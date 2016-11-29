@@ -508,6 +508,7 @@
 				ED0CE0B81DEBF3FF006CC634 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED0CE0B91DEBF3FF006CC634 /* Build configuration list for PBXNativeTarget "TimerTests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +517,7 @@
 				ED0CE0BB1DEBF3FF006CC634 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED0CE0BC1DEBF3FF006CC634 /* Build configuration list for PBXNativeTarget "TimerUITests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +526,7 @@
 				ED0CE0BE1DEBF3FF006CC634 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

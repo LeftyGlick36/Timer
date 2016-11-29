@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     
     func processCount() {
         num.add(1.0)
+        
     }
     
     
